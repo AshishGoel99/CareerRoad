@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Road</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body data-ng-app="CareerRoad">
+    <div class="nav navbar"></div>
+    <div class="container row">
+        <div data-ng-controller="LeftMenuCtrl" class="col-md-2">
+            <ul data-ng-repeat="option in options" class="list-unstyled">
+                <li class="list-group-item"><a href="#{{option.url}}">{{option.name}}</a></li>
+            </ul>
+        </div>
+        <div data-ng-view class="col-md-10">@RenderBody()</div>
+    </div>
+    @Scripts.Render("~/bundles/required")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
